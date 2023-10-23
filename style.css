@@ -1,0 +1,13 @@
+table{
+  border: 2px solid black;
+  border-collapse: collapse;
+}
+
+th,td,td{
+  border: 2px solid black;
+}
+
+body{
+  background-image: url(images/robert-lukeman-_RBcxo9AU-U-unsplash.jpg);
+  background-size: cover;
+}
