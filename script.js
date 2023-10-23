@@ -34,11 +34,26 @@ function deleteAny(i){
 }
 
 function editAny(i){
-    showErr.innerHTML = `<p class="alert alert-success text-center fw-bold">Edit successfully</p>`
-    productArray[i]["product"] = productName.value;
-    productArray[i]["description"] = descriptionName.value;
-    productArray[i]["price"] = priceAmt.value;
-    displayAll()
+  var check = confirm("Do you want to edit?")
+  
+    if(check == true){
+      if (productName.value !== "" && descriptionName.value !== "" && priceAmt.value !== ""){
+        showErr.innerHTML = `<p class="alert alert-success text-center fw-bold">Edit successfully</p>`
+        productArray[i]["product"] = productName.value;
+        productArray[i]["description"] = descriptionName.value;
+        productArray[i]["price"] = priceAmt.value;
+        productName.value = ""
+        descriptionName.value = ""
+        priceAmt.value = ""
+        displayAll()
+      }else{
+        showErr.innerHTML = `<p class="alert alert-danger text-center fw-bold">all inputs must be filled</p>`
+        
+      }
+    }else{
+      showErr.innerHTML = `<p class="alert alert-warning text-center fw-bold">Edit cancelled</p>`
+
+    }
   }
 
 
